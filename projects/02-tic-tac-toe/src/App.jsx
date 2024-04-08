@@ -5,21 +5,31 @@ const TURNS = {
   O: 'o'
 }
 
+
 const board = Array(9).fill(null);
+
+const Square = ({children, udateBoard, index})=>{
+  return (
+      <div className='square'>
+        {children}
+      </div>
+  )
+}
+
 
 function App() {
   return (
     <main className='board'>
       <h1>Tic Toc Toe</h1>
-      <section className='game'>
+      <section className="game">
         {
          board.map((_, index) => {
           return(
-          <div className='cell' key={index}>
-            <span className='cell__content'>
+            <Square   key ={index}
+                      index= {index}
+            >                        
               {index}
-            </span>
-          </div>
+            </Square>           
           )
          })
         }
