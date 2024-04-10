@@ -1,6 +1,6 @@
 import { Square } from "./Square"
 
-export function Tablero() {
+export function Tablero(board) {
     return(
       <section className="game">
         {
