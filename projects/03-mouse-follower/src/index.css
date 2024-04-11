@@ -69,7 +69,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
+/* se elimina el cursor*/
 body.no-cursor {
   cursor: none;
 }

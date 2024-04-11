@@ -5,7 +5,8 @@ function App() {
 
   const [enabled, setEnabled] = useState(false)
   const [position, setPosition] = useState({x:0, y:0})
-
+ 
+  // efecto de seguir cursor  (pointer move)
   useEffect (() =>{
     console.log('Efecto', {enabled});
 
@@ -22,6 +23,14 @@ function App() {
       console.log('limpiar');
       window.removeEventListener('pointermove', handleMove)
     }   
+  }, [enabled])
+
+  useEffect(() =>{
+    document.body.classList.toggle('no-cursor', enabled)
+
+    return () =>{
+      document.body.classList.remove('no-cursor', enabled)
+    }
   }, [enabled])
 
   return (
