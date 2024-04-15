@@ -15,7 +15,6 @@ export function useCatImage({fact}) {
             const url = new URL(`https://cataas.com/cat/says/${threeFirstWords}?size=50&color=red`)
             // envio la url al estado imageUrl para que se renderice
             setImageUrl(url)
-            console.log(url);
         },[fact])
 
         return {imageUrl}

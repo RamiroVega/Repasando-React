@@ -1,27 +1,16 @@
-import { useEffect, useState } from "react"
 import './App.css'
-import { getRamdomFact } from "./services/fact";
 import { useCatImage } from "./hooks/useCatImage";
+import { useCatFact } from "./hooks/useCatFact";
 
 
 
 export function App() {
-    const [fact , setFact] = useState();
-    const {imageUrl} = useCatImage({fact})
-   
+    const {fact, refreshFact} = useCatFact()
+    const {imageUrl} = useCatImage({fact}) 
     
 
-    useEffect (() =>{
-        
-        getRamdomFact().then(newFact => setFact(newFact))
-        
-    },[]) 
-
-   
-
     const handelClick = async () =>{
-       const newFact = await getRamdomFact();
-       setFact (newFact)
+       refreshFact()
     }
 
       return (
